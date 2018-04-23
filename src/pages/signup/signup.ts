@@ -45,8 +45,9 @@ export class SignupPage {
   presentToast(message) {
   let toast = this.toastCtrl.create({
     message:  message,
-    duration: 3000,
-    position: 'top'
+    duration: 10000,
+    position: 'top',
+    cssClass: "toast-success",
   });
   toast.present();
 }
@@ -56,7 +57,7 @@ export class SignupPage {
 
   signup() {
   if(this.imageSrc==''){
-    this.presentToast('Please upload profile image.');
+    this.presentToast('Please upload profile picture.');
     return false;
   }
 

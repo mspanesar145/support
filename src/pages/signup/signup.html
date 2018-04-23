@@ -17,6 +17,7 @@
   <form class="form" [formGroup]="validationsForm">
    <ion-item (click)="presentActionSheet()" class="image-section" text-center>
     <ion-icon *ngIf="!imageSrc" ios="ios-images" md="md-images" class="large-icon"></ion-icon>
+    <h6>Upload Profile Picture</h6>
     <img [src]="imageSrc" full />
   </ion-item>
     <ion-item>
@@ -26,7 +27,7 @@
    <div *ngIf="!validationsForm.controls.name.valid &&
     validationsForm.controls.name.dirty"
     class="validator-error">
-  Please enter a valid name.
+  Please enter name.
 </div>
     
 
@@ -40,7 +41,7 @@
 <div *ngIf="!validationsForm.controls.email.valid &&
     validationsForm.controls.email.dirty"
     class="validator-error">
-  Please enter a valid email.
+  Please enter email.
 </div>
       <ion-item>
         <ion-label floating color="primary">Phone</ion-label>
@@ -52,7 +53,7 @@
 <div *ngIf="!validationsForm.controls.phone.valid &&
     validationsForm.controls.phone.dirty"
     class="validator-error">
-  Please enter a valid phone.
+  Please enter phone.
 </div>
       
     

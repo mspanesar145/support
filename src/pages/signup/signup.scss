@@ -10,4 +10,8 @@ $below-half:40px;
 	height: $double-count;
 }
 .btn-height{height:$below-half;}
+.toast-success,.toast-message {
+         background-color:#ff0000!important;
+         color:green;    
+  }
 }
