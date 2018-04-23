@@ -45,7 +45,7 @@ export class SignupPage {
   presentToast(message) {
   let toast = this.toastCtrl.create({
     message:  message,
-    duration: 10000,
+    duration: 3000,
     position: 'top',
     cssClass: "toast-success",
   });
