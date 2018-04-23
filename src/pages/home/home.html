@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar hideBackButton *navbar>
+    <ion-title>
+      Welcome
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+
+<ion-item>
+    <img [src]="imageSrc"/>
+</ion-item>
+<ion-item>
+    <ion-thumbnail item-start>
+        <ion-icon name="person" class="large-icon"></ion-icon>
+    </ion-thumbnail>
+    <h2>{{userData.name}}
+      </h2>
+  </ion-item>
+  <ion-item>
+  <ion-thumbnail item-start>
+      <ion-icon name="mail" class="large-icon"></ion-icon>
+  </ion-thumbnail>
+  <h2>{{userData.email}}
+    </h2>
+</ion-item>
+<ion-item>
+<ion-thumbnail item-start>
+    <ion-icon name="phone-portrait" class="large-icon"></ion-icon>
+</ion-thumbnail>
+<h2>{{userData.phone}}
+  </h2>
+</ion-item>
+
+<ion-row>
+  
+<ion-item text-center> 
+
+  <button ion-button icon-only color="secondary" large (click)="callTel(userData.phone)">
+    <ion-icon name="call"></ion-icon>
+  </button>
+
+  <button ion-button icon-only color="secondary" large (click)="mailTo(userData.email)">
+    <ion-icon name="mail"></ion-icon>
+  </button>
+
+</ion-item>
+</ion-row>
+</ion-content>
