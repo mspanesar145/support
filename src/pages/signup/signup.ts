@@ -6,6 +6,7 @@ import { HomePage } from '../../pages/home/home';
 import { Storage } from '@ionic/storage';
 
 import { Camera } from '@ionic-native/camera';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 
 /**
@@ -31,7 +32,7 @@ export class SignupPage {
   imageSrc: string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,public storage: Storage,public camera : Camera,public actionSheetCtrl: ActionSheetController,public platform: Platform,public  toastCtrl: ToastController) {
+  constructor(private sqlite: SQLite,public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,public storage: Storage,public camera : Camera,public actionSheetCtrl: ActionSheetController,public platform: Platform,public  toastCtrl: ToastController) {
 
     this.imageSrc = "";
   		this.validationsForm = this.formBuilder.group ({
@@ -65,6 +66,26 @@ export class SignupPage {
   console.log(this.validationsForm.value); 
   
   this.storage.set(STORAGE_KEY, this.validationsForm.value);
+  /*CODE ADDED FOR SQLLITE */
+
+  this.sqlite.create({
+    name: 'support.db',
+    location: 'default'
+  }).then((db: SQLiteObject) => {
+    db.executeSql('INSERT INTO users VALUES(NULL,?,?,?,?)',[this.validationsForm.value.name,this.validationsForm.value.email,this.validationsForm.value.phone,this.validationsForm.value['image']])
+      .then(res => {
+        console.log(res);
+      alert("insertId: " + res.insertId);
+          //  this.navCtrl.popToRoot();
+          
+        
+      });
+      
+  });
+
+  /*CODE ADDED FOR SQLLITE */
+
+
     this.navCtrl.setRoot(HomePage);
   }
 

@@ -13,6 +13,8 @@ import { SignupProvider } from '../providers/signup/signup';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+import { SQLite } from '@ionic-native/sqlite';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { IonicStorageModule } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     Camera,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     
   ]
