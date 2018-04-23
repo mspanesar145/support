@@ -1,8 +1,12 @@
 page-home {
-$icon-size: 2.1em;   
-$margin :5px; 
+$icon-size: 2.1em;  
+$full-count : 50px;
+$half-count: 100px;  
 .large-icon {
     font-size: $icon-size; 
-    margin-top:$margin;
+   
+}
+.profile-pic{
+	border-radius:$half-count;height:$full-count;
 }
 }

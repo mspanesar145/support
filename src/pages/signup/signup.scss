@@ -1,3 +1,13 @@
 page-signup {
-
+$icon-size: 2.1em;   
+$double-count : 200px;
+$below-half:40px; 
+.large-icon {
+    font-size: $icon-size; 
+   
+}
+.image-section{
+	height: $double-count;
+}
+.btn-height{height:$below-half;}
 }

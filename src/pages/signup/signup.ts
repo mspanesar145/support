@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ActionSheetController,Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ActionSheetController,Platform,ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { HomePage } from '../../pages/home/home';
 
@@ -31,7 +31,7 @@ export class SignupPage {
   imageSrc: string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,public storage: Storage,public camera : Camera,public actionSheetCtrl: ActionSheetController,public platform: Platform) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,public storage: Storage,public camera : Camera,public actionSheetCtrl: ActionSheetController,public platform: Platform,public  toastCtrl: ToastController) {
 
     this.imageSrc = "";
   		this.validationsForm = this.formBuilder.group ({
@@ -42,14 +42,29 @@ export class SignupPage {
   		});
   }
 
+  presentToast(message) {
+  let toast = this.toastCtrl.create({
+    message:  message,
+    duration: 3000,
+    position: 'top'
+  });
+  toast.present();
+}
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
 
   signup() {
+  if(this.imageSrc==''){
+    this.presentToast('Please upload profile image.');
+    return false;
+  }
+
+  this.validationsForm.value['image'] = this.imageSrc;
   console.log(this.validationsForm.value); 
+  
   this.storage.set(STORAGE_KEY, this.validationsForm.value);
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
   }
 
   public presentActionSheet() {
@@ -87,10 +102,12 @@ export class SignupPage {
    
     // Get the data of an image
     this.camera.getPicture(options).then((imagePath) => {
-      if (this.platform.is('ios')) {
+      if (this.platform.is('android')) {
+    
         this.imageSrc = this.imageSrc.replace(/^file:\/\//, '');
       this.imageSrc = imagePath;
       console.log(this.imageSrc);
+      
       }
       // Special handling for Android library
       /* if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {

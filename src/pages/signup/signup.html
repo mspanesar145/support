@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title style="text-align: center;"> Signup</ion-title>
+    <ion-title text-center>Signup</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,10 +15,10 @@
 
 <ion-content padding class="form-content">
   <form class="form" [formGroup]="validationsForm">
-   <div style="height: 200px;widows: 100%;background: #ddd;text-align: center;">
-    <ion-icon (click)="presentActionSheet()" ios="ios-images" md="md-images" style="font-size:5em;position: absolute;margin: 15% -5%"></ion-icon>
-    <img [src]="imageSrc"/>
-  </div>
+   <ion-item (click)="presentActionSheet()" class="image-section" text-center>
+    <ion-icon *ngIf="!imageSrc" ios="ios-images" md="md-images" class="large-icon"></ion-icon>
+    <img [src]="imageSrc" full />
+  </ion-item>
     <ion-item>
       <ion-label floating color="primary">Name</ion-label>
       <ion-input type="text" [formControl]="validationsForm.controls['name']"></ion-input>
@@ -58,7 +58,7 @@
     
 <ion-item>
 
-    <button ion-button full color="secondary" type="submit" [disabled]="!validationsForm.valid" (click)="signup()" style="height: 40px;">Submit</button>
+    <button ion-button full color="secondary" type="submit" [disabled]="!validationsForm.valid" (click)="signup()" class="btn-height">Signup</button>
   </ion-item>
 
   </form>

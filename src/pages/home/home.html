@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-navbar hideBackButton *navbar>
-    <ion-title>
+  <ion-navbar  [hideBackButton]="true">
+    <ion-title text-center>
       Welcome
     </ion-title>
   </ion-navbar>
@@ -9,30 +9,26 @@
 <ion-content padding>
   
 
-<ion-item>
-    <img [src]="imageSrc"/>
+<ion-item text-center>
+    <img [src]="userData.image" class="profile-pic"/>
 </ion-item>
-<ion-item>
-    <ion-thumbnail item-start>
-        <ion-icon name="person" class="large-icon"></ion-icon>
-    </ion-thumbnail>
-    <h2>{{userData.name}}
-      </h2>
+
+<ion-list>
+  <ion-item>
+    <ion-icon name="person" item-start class="large-icon"></ion-icon>
+      {{userData.name}}
   </ion-item>
   <ion-item>
-  <ion-thumbnail item-start>
-      <ion-icon name="mail" class="large-icon"></ion-icon>
-  </ion-thumbnail>
-  <h2>{{userData.email}}
-    </h2>
-</ion-item>
-<ion-item>
-<ion-thumbnail item-start>
-    <ion-icon name="phone-portrait" class="large-icon"></ion-icon>
-</ion-thumbnail>
-<h2>{{userData.phone}}
-  </h2>
-</ion-item>
+    <ion-icon name="mail" item-start class="large-icon"></ion-icon>
+      {{userData.email}}
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="phone-portrait" item-start class="large-icon"></ion-icon>
+      {{userData.phone}}
+  </ion-item>
+</ion-list>
+
 
 <ion-row>
   
