@@ -27,9 +27,11 @@ export class HomePage {
     }).then((db: SQLiteObject) => {
       db.executeSql('select * from users',[])
         .then(res => {
+        console.log("******");
           console.log(res);
-          if(res !== null){
-            this.userData =res;
+          if(res.rows.length > 0){
+
+            this.userData =res.rows.item(0);
 
           }
         });

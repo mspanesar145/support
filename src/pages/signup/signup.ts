@@ -67,19 +67,20 @@ export class SignupPage {
   
   this.storage.set(STORAGE_KEY, this.validationsForm.value);
   /*CODE ADDED FOR SQLLITE */
-
   this.sqlite.create({
     name: 'support.db',
     location: 'default'
   }).then((db: SQLiteObject) => {
+  db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, name TEXT, email TEXT, phone TEXT,image TEXT)', {})
+    .then(res => console.log('Executed SQL'))
+    .catch(e => console.log(e));
     db.executeSql('INSERT INTO users VALUES(NULL,?,?,?,?)',[this.validationsForm.value.name,this.validationsForm.value.email,this.validationsForm.value.phone,this.validationsForm.value['image']])
       .then(res => {
         console.log(res);
-      alert("insertId: " + res.insertId);
           //  this.navCtrl.popToRoot();
           
         
-      });
+      }).catch(e=>console.log(e));
       
   });
 
