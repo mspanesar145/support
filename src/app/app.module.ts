@@ -14,13 +14,15 @@ import { SignupProvider } from '../providers/signup/signup';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { SQLite } from '@ionic-native/sqlite';
+import {AccordionListComponent} from '../components/accordion-list/accordion-list';
 
 
 @NgModule({
   declarations: [
     Support,
     HomePage,
-    SignupPage
+    SignupPage,
+    AccordionListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { SQLite } from '@ionic-native/sqlite';
          driverOrder: ['indexeddb', 'sqlite', 'websql']
     })
   ],
+  exports: [AccordionListComponent],
   bootstrap: [IonicApp],
   entryComponents: [
     Support,

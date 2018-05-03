@@ -9,4 +9,23 @@ $half-count: 50px;
 .profile-pic{
 	border-radius:$half-count;height:$full-count;
 }
+.list-ios {
+    margin: -1px 0 10px 0px;
+    border:1px solid #696969;
+  }
+  accordion-list .accordion-header {
+    color: #333333;
+  }
+  .item-ios.item-block .item-inner{
+      padding-right: 0px;
+  }
+  accordion-list .accordion-content{
+      padding: 0 0 0 0.75rem;
+  }
+  .contact-buttons{
+    padding: 20px;
+  }
+  .contact-buttons span{
+    margin: 10px;
+  }
 }

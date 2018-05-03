@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ActionSheetController,Platform,ToastController } from 'ionic-angular';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { HomePage } from '../../pages/home/home';
 
 import { Storage } from '@ionic/storage';
@@ -30,8 +30,7 @@ export class SignupPage {
 
   validationsForm : FormGroup;
   imageSrc: string;
-
-
+  
   constructor(private sqlite: SQLite,public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,public storage: Storage,public camera : Camera,public actionSheetCtrl: ActionSheetController,public platform: Platform,public  toastCtrl: ToastController) {
 
     this.imageSrc = "";
@@ -55,12 +54,15 @@ export class SignupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
-
+ /*textLoad(obj,desc){
+   console.log("$$$$$$$$$$$");
+   $(obj).html($.parseHTML(desc));
+ } */
   signup() {
-  if(this.imageSrc==''){
+  /*if(this.imageSrc==''){
     this.presentToast('Please upload profile picture.');
     return false;
-  }
+  } */
 
   this.validationsForm.value['image'] = this.imageSrc;
   console.log(this.validationsForm.value); 

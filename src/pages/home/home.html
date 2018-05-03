@@ -9,12 +9,12 @@
 <ion-content padding>
   
 
-<ion-item text-center>
+<!-- <ion-item text-center>
     <img [src]="userData.image" class="profile-pic"/>
 </ion-item>
 
 <ion-list>
-  <ion-item>
+   <ion-item>
     <ion-icon name="person" item-start class="large-icon"></ion-icon>
       {{userData.name}}
   </ion-item>
@@ -26,11 +26,20 @@
   <ion-item>
     <ion-icon name="phone-portrait" item-start class="large-icon"></ion-icon>
       {{userData.phone}}
+  </ion-item> -->
+  <ion-list> 
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="userData.image" class="profile-pic"/>
+    </ion-avatar>
+    <h2>{{userData.name}}</h2>
+    <h3>{{userData.email}}</h3>
+    <p>{{userData.phone}}</p>
   </ion-item>
 </ion-list>
 
 
-<ion-row>
+<!--<ion-row>
 
   <ion-item text-wrap text-center>
       We are happy to help you, kindly Contact us or Email us for enquiry.
@@ -47,5 +56,20 @@
   </button>
 
 </ion-item>
-</ion-row>
+</ion-row> -->
+
+
+
+<!-- Accordian -->
+<accordion-list *ngFor="let item of accordianItems; let index = index"
+[title]="item.name"
+textColor="#333333"
+hasMargin="false"
+headerColor="#A9A9A9"
+[expanded]="index === 0">
+<!--<div text-wrap [innerHTML]="item.description"></div> -->
+<div text-wrap [innerHTML]="item.description"></div>
+</accordion-list>
+
+<!-- Accordian -->
 </ion-content>
