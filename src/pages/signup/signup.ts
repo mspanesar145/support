@@ -59,10 +59,10 @@ export class SignupPage {
    $(obj).html($.parseHTML(desc));
  } */
   signup() {
-  /*if(this.imageSrc==''){
+  if(this.imageSrc==''){
     this.presentToast('Please upload profile picture.');
     return false;
-  } */
+  } 
 
   this.validationsForm.value['image'] = this.imageSrc;
   console.log(this.validationsForm.value); 

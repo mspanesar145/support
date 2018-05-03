@@ -28,4 +28,10 @@ $half-count: 50px;
   .contact-buttons span{
     margin: 10px;
   }
+.item-md ion-avatar img {
+    border-radius: 0%;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  }
 }

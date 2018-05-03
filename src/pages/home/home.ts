@@ -30,7 +30,7 @@ export class HomePage {
     {
       name: 'Contact',
      // description: '<ion-row><ion-item text-wrap text-center>We are happy to help you, kindly Contact us or Email us for enquiry.</ion-item><ion-item text-center><button ion-button icon-only color="secondary" large (click)="callTel(11111111)"><ion-icon name="call"></ion-icon></button><button ion-button icon-only color="secondary" large (click)=mailTo("admin@test.com")><ion-icon name="mail"></ion-icon></button></ion-item></ion-row>',
-     description: "<div>We are happy to help you, kindly Contact us or Email us for enquiry.</div><div class='contact-buttons' align='center'><span style='margin: 10px;'><a href='mailto:admin@test.com' ><img src='../../assets/imgs/msg1-icon.png'></a></span><span style='margin: 10px;'><a href='tel:1111' class='callTo'><img src='../../assets/imgs/call1-icon.png'></a></span></div>",
+     description: "<div>We are happy to help you, kindly Contact us or Email us for enquiry.</div><div class='contact-buttons' align='center'><span style='margin: 10px;'><a href='mailto:admin@test.com' ><img src='assets/imgs/msg1-icon.png'></a></span><span style='margin: 10px;'><a href='tel:1111' class='callTo'><img src='assets/imgs/call1-icon.png'></a></span></div>",
     }
 
   ];
