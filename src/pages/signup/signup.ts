@@ -61,7 +61,7 @@ export class SignupPage {
   signup() {
   if(this.imageSrc==''){
     this.presentToast('Please upload profile picture.');
-    return false;
+    return false; 
   } 
 
   this.validationsForm.value['image'] = this.imageSrc;
