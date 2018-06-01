@@ -59,12 +59,12 @@ export class SignupPage {
    $(obj).html($.parseHTML(desc));
  } */
   signup() {
-  if(this.imageSrc==''){
+ /* if(this.imageSrc==''){
     this.presentToast('Please upload profile picture.');
     return false; 
-  } 
+  } */
 
-  this.validationsForm.value['image'] = this.imageSrc;
+  //this.validationsForm.value['image'] = this.imageSrc;
   console.log(this.validationsForm.value); 
   
   this.storage.set(STORAGE_KEY, this.validationsForm.value);
@@ -73,10 +73,10 @@ export class SignupPage {
     name: 'support.db',
     location: 'default'
   }).then((db: SQLiteObject) => {
-  db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, name TEXT, email TEXT, phone TEXT,image TEXT)', {})
+  db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, name TEXT, email TEXT, phone TEXT)', {})
     .then(res => console.log('Executed SQL'))
     .catch(e => console.log(e));
-    db.executeSql('INSERT INTO users VALUES(NULL,?,?,?,?)',[this.validationsForm.value.name,this.validationsForm.value.email,this.validationsForm.value.phone,this.validationsForm.value['image']])
+    db.executeSql('INSERT INTO users VALUES(NULL,?,?,?)',[this.validationsForm.value.name,this.validationsForm.value.email,this.validationsForm.value.phone])
       .then(res => {
         console.log(res);
           //  this.navCtrl.popToRoot();
