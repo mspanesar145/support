@@ -65,7 +65,7 @@ export class SignupPage {
   } */
 
   //this.validationsForm.value['image'] = this.imageSrc;
-  console.log(this.validationsForm.value); 
+  //console.log(this.validationsForm.value); 
   
   this.storage.set(STORAGE_KEY, this.validationsForm.value);
   /*CODE ADDED FOR SQLLITE */
@@ -78,7 +78,7 @@ export class SignupPage {
     .catch(e => console.log(e));
     db.executeSql('INSERT INTO users VALUES(NULL,?,?,?)',[this.validationsForm.value.name,this.validationsForm.value.email,this.validationsForm.value.phone])
       .then(res => {
-        console.log(res);
+       console.log(res);
           //  this.navCtrl.popToRoot();
           
         
