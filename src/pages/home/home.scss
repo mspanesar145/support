@@ -37,8 +37,12 @@ $half-count: 50px;
 
   .padding5 {
     padding:5px;
+    color: #fff;
   }
   .list-header-ios {
     text-transform: none !important;
+  }
+  .content-ios,ion-item{
+    background-color : #606060 !important;
   }
 }

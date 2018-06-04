@@ -34,7 +34,7 @@ export class Support {
       location: 'default'
     }).then((db: SQLiteObject) => {
 
-    db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, name TEXT, email TEXT, phone TEXT,image TEXT)', {})
+    db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, name TEXT, email TEXT, phone TEXT)', {})
     .then(res => console.log('Executed SQL'))
     .catch(e => console.log(e));
       db.executeSql('select * from users',[])

@@ -37,12 +37,12 @@ export class HomePage {
   userData = {};
   constructor(private sqlite : SQLite,public navCtrl: NavController,public storage: Storage) {
 
-    console.log(this.storage.get(STORAGE_KEY));
+    //console.log(this.storage.get(STORAGE_KEY));
     this.getData();
 
   }
   getData(){
-
+    console.log("dsfdf");
     this.sqlite.create({
       name: 'support.db',
       location: 'default'
@@ -66,7 +66,7 @@ export class HomePage {
 
     this.storage.get(STORAGE_KEY).then((resp) => {
       if(resp !== null){
-        console.log(resp);
+       // console.log(resp);
       //  this.userData =resp;
 
       }

@@ -33,4 +33,14 @@ $below-half:40px;
   .contact-buttons span{
     margin: 10px;
   }
+  .content-ios,ion-item{
+    background-color : #606060 !important;
+  }
+  .item-ios .item-button{
+    height: 50px;
+  }
+  .item-input ion-input,
+.item-input ion-textarea,.validator-error {
+  color: #fff;
+}
 }
