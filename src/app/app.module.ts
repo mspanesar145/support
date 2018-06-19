@@ -16,7 +16,6 @@ import { IonicStorageModule } from '@ionic/storage';
 import { SQLite } from '@ionic-native/sqlite';
 import {AccordionListComponent} from '../components/accordion-list/accordion-list';
 
-
 @NgModule({
   declarations: [
     Support,
@@ -37,7 +36,7 @@ import {AccordionListComponent} from '../components/accordion-list/accordion-lis
   entryComponents: [
     Support,
     HomePage,
-    SignupPage
+    SignupPage,
   ],
   providers: [
     SignupProvider,

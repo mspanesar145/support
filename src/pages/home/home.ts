@@ -29,20 +29,23 @@ export class HomePage {
     },
     {
       name: 'Contact',
-     // description: '<ion-row><ion-item text-wrap text-center>We are happy to help you, kindly Contact us or Email us for enquiry.</ion-item><ion-item text-center><button ion-button icon-only color="secondary" large (click)="callTel(11111111)"><ion-icon name="call"></ion-icon></button><button ion-button icon-only color="secondary" large (click)=mailTo("admin@test.com")><ion-icon name="mail"></ion-icon></button></ion-item></ion-row>',
-     description: "<div><h2>GET IN TOUCH WITH US<h2><hr></div><div>All time access to our certified engineers for any question and maintenance issue. Support4all provides computer repair and technical support for consumers and small businesses in various countries through its marketing offices and delivery centers across United States, Spain, Singapore, Mauritius and India.</div><div class='contact-buttons' align='center'><span style='margin: 10px;'><a href='mailto:support@support4all.biz' ><img src='assets/imgs/msg1-icon.png'></a></span><span style='margin: 10px;'><a href='tel:17783201409' class='callTo'><img src='assets/imgs/call1-icon.png'></a></span></div>",
+     
+     description: "<div><h2>GET IN TOUCH WITH US<h2><hr></div><div>All time access to our certified engineers for any question and maintenance issue. Support4all provides computer repair and technical support for consumers and small businesses in various countries through its marketing offices and delivery centers across United States, Spain, Singapore, Mauritius and India.</div> <div class='contact-buttons' align='center'><span style='margin: 10px;'><a href='mailto:support@support4all.biz' ><img src='assets/imgs/msg1-icon.png'></a></span><span style='margin: 10px;'><a href='tel:17783201409' class='callTo'><img src='assets/imgs/call1-icon.png'></a></span></div><div align='center'>EST 11:30 to 8:30 pm)</div>",
     }
-
   ];
   userData = {};
   constructor(private sqlite : SQLite,public navCtrl: NavController,public storage: Storage) {
 
     //console.log(this.storage.get(STORAGE_KEY));
+    /*//setTimeout(function(){
+    var display=setInterval( function(){
+      Times()},0);
+  //},2000); */
     this.getData();
+
 
   }
   getData(){
-    console.log("dsfdf");
     this.sqlite.create({
       name: 'support.db',
       location: 'default'
@@ -80,4 +83,24 @@ export class HomePage {
 
     window.open('tel:'+phone);
   }
+  
 }
+function Times()
+  {
+
+    //
+    var options = { timeZone: "America/New_York"}, // you have to know that New York in EST
+    estTime = new Date();
+ 
+  //console.log("Date and Time in EST is: " + estTime.toLocaleString("en-US", options));
+    //
+
+
+
+  /*var date=new Date();
+  var time=date.toLocaleTimeString(); */
+  if(document.getElementsByClassName("ESTCurrentTime")){
+  document.getElementsByClassName("ESTCurrentTime")[0].innerHTML=estTime.toLocaleString("en-US", options);
+  document.getElementsByClassName("ESTCurrentTime")[1].innerHTML=estTime.toLocaleString("en-US", options);
+  }
+  }
