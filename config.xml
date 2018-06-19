@@ -19,8 +19,6 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <preference name="FadeSplashScreen" value="false" />
-    <preference name="AutoHideSplashScreen" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -87,6 +85,6 @@
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="We would like to access your images" />
     </plugin>
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
-    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <engine name="ios" spec="^4.5.4" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
 </widget>

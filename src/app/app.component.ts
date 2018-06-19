@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { Platform ,ModalController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 
 import { Storage } from '@ionic/storage';
-import { SplashPage } from '../pages/splash/splash';
 const STORAGE_KEY = 'signup';
 
 @Component({
@@ -17,13 +15,11 @@ const STORAGE_KEY = 'signup';
 export class Support {
   rootPage:any = '';
 
-  constructor(private sqlite : SQLite,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,public storage: Storage,modalCtrl: ModalController) {
+  constructor(private sqlite : SQLite,platform: Platform, statusBar: StatusBar,public storage: Storage,modalCtrl: ModalController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
-      let splash = modalCtrl.create(SplashPage);
-      splash.present();
      // splashScreen.hide();
 
      /*this.storage.remove(STORAGE_KEY);
