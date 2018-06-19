@@ -15,13 +15,14 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { SQLite } from '@ionic-native/sqlite';
 import {AccordionListComponent} from '../components/accordion-list/accordion-list';
-
+import { SplashPage } from '../pages/splash/splash';
 
 @NgModule({
   declarations: [
     Support,
     HomePage,
     SignupPage,
+    SplashPage,
     AccordionListComponent
   ],
   imports: [
@@ -37,7 +38,8 @@ import {AccordionListComponent} from '../components/accordion-list/accordion-lis
   entryComponents: [
     Support,
     HomePage,
-    SignupPage
+    SignupPage,
+    SplashPage
   ],
   providers: [
     SignupProvider,
