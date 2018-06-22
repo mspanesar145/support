@@ -28,24 +28,17 @@
       {{userData.phone}}
   </ion-item> -->
   <ion-list> 
-  <ion-item>
-    <!--<ion-avatar item-start>
-      <img [src]="userData.image" class="profile-pic"/>
-    </ion-avatar>-->
-    <ion-item text-center>
+    <ion-item text-center clas="logo-item">
       <img src="assets/imgs/support-logo-512-2.png" full />
     </ion-item>
-    <h2 class="padding5">{{userData.name}}</h2>
-    <h3 class="padding5">{{userData.email}}</h3>
-    <p class="padding5">{{userData.phone}}</p>
+  <ion-item text-center> 
+
+    <div class='contact-buttons' align='center'><span style='margin: 10px;'><a href='mailto:support@support4all.biz' ><img src='assets/imgs/msg1-icon.png'></a></span><span style='margin: 10px;'><a href='tel:17783201409' class='callTo'><img src='assets/imgs/call1-icon.png'></a></span></div>
+    <div class="white">EST (11:30 AM to 8:30 PM)</div>
   </ion-item>
 </ion-list>
 
-<ion-item text-center> 
 
-  <div class='contact-buttons' align='center'><span style='margin: 10px;'><a href='mailto:support@support4all.biz' ><img src='assets/imgs/msg1-icon.png'></a></span><span style='margin: 10px;'><a href='tel:17783201409' class='callTo'><img src='assets/imgs/call1-icon.png'></a></span></div>
-  <div class="white">EST 11:30 to 8:30 pm)</div>
-</ion-item>
 <!--<ion-row>
 
   <ion-item text-wrap text-center>

@@ -42,11 +42,13 @@ $half-count: 50px;
   .list-header-ios {
     text-transform: none !important;
   }
-  .content-ios,ion-item{
+  .content-ios,ion-item,ion-content{
     background-color : #606060 !important;
   }
 .white{
   color:#fff;
 }
-  
+  .logo-item .item-inner {
+    border-bottom: 0px !important;
+  }
 }

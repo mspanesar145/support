@@ -33,7 +33,7 @@ $below-half:40px;
   .contact-buttons span{
     margin: 10px;
   }
-  .content-ios,ion-item{
+  .content-ios,ion-item,ion-content{
     background-color : #606060 !important;
   }
   .item-ios .item-button{
@@ -42,5 +42,12 @@ $below-half:40px;
   .item-input ion-input,
 .item-input ion-textarea,.validator-error {
   color: #fff;
+}
+
+.form-btn-submit .item-inner {
+  border-bottom: 0px !important;
+}
+.item-md .item-button {
+  height: 50px !important;
 }
 }
